@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Models.Models.DTO
+namespace Ecommerce.Models.Models.DTO.Product
 {
     public class ProductCreateDTO
     {
@@ -13,6 +13,7 @@ namespace Ecommerce.Models.Models.DTO
         public string Name { get; set; }
         [Required]
         public string Description { get; set; }
-        public DateTime CreatedDate { get; set; }=DateTime.Now;
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public int CategoryId { get; set; }
     }
 }

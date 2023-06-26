@@ -4,6 +4,7 @@ using Ecommerce.Data.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230625143729_PushProduct_CategoriesToDb")]
+    partial class PushProduct_CategoriesToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +55,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3248),
+                            CreatedDate = new DateTime(2023, 6, 25, 20, 7, 28, 985, DateTimeKind.Local).AddTicks(8038),
                             Description = "Test Category Description",
                             Name = "Test Category",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -60,7 +63,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3249),
+                            CreatedDate = new DateTime(2023, 6, 25, 20, 7, 28, 985, DateTimeKind.Local).AddTicks(8039),
                             Description = "Dummy Category Description",
                             Name = "Dummy Category",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -103,7 +106,7 @@ namespace Ecommerce.Data.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3083),
+                            CreatedDate = new DateTime(2023, 6, 25, 20, 7, 28, 985, DateTimeKind.Local).AddTicks(7944),
                             Description = "Test Description",
                             Name = "Test Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -112,7 +115,7 @@ namespace Ecommerce.Data.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3103),
+                            CreatedDate = new DateTime(2023, 6, 25, 20, 7, 28, 985, DateTimeKind.Local).AddTicks(7957),
                             Description = "Dummy Description",
                             Name = "Dummy Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -121,36 +124,9 @@ namespace Ecommerce.Data.Migrations
                         {
                             Id = 3,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3104),
+                            CreatedDate = new DateTime(2023, 6, 25, 20, 7, 28, 985, DateTimeKind.Local).AddTicks(7958),
                             Description = "Dummy1 Description",
                             Name = "Dummy1 Name",
-                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3105),
-                            Description = "Dummy4 Description",
-                            Name = "Dummy4 Name",
-                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3106),
-                            Description = "Dummy5 Description",
-                            Name = "Dummy5 Name",
-                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3108),
-                            Description = "Dummy6 Description",
-                            Name = "Dummy6 Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

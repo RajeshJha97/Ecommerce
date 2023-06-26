@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Ecommerce.Models.Models;
-using Ecommerce.Models.Models.DTO;
+using Ecommerce.Models.Models.DTO.Product;
+using Ecommerce.Models.Models.DTO.Response;
 
 namespace Ecommerce.API
 {
@@ -10,6 +11,9 @@ namespace Ecommerce.API
         {
             CreateMap<Product, ProductCreateDTO>().ReverseMap();
             CreateMap<Product, ProductUpdateDTO>().ReverseMap();
+            CreateMap<Product, ProductResponseDTO>().ReverseMap();
+            CreateMap<Category, CategoryResponseDTO>().ReverseMap();
+            
         }
     }
 }
