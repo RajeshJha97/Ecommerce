@@ -34,11 +34,9 @@ namespace Ecommerce.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -52,7 +50,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3248),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6677),
                             Description = "Test Category Description",
                             Name = "Test Category",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -60,7 +58,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3249),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6678),
                             Description = "Dummy Category Description",
                             Name = "Dummy Category",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -69,11 +67,9 @@ namespace Ecommerce.Data.Migrations
 
             modelBuilder.Entity("Ecommerce.Models.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -101,54 +97,54 @@ namespace Ecommerce.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = new Guid("7cffcebb-c9cd-4036-a3ab-66d0dcffebed"),
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3083),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6546),
                             Description = "Test Description",
                             Name = "Test Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 2,
+                            Id = new Guid("c57cd240-b7c3-4126-b763-bda4f85b7c02"),
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3103),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6574),
                             Description = "Dummy Description",
                             Name = "Dummy Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 3,
+                            Id = new Guid("29fcd54e-965e-432d-a761-168ba6d80f20"),
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3104),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6576),
                             Description = "Dummy1 Description",
                             Name = "Dummy1 Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 4,
+                            Id = new Guid("d54e85d2-6b44-4d3e-9aef-e239ac80ea40"),
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3105),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6577),
                             Description = "Dummy4 Description",
                             Name = "Dummy4 Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 5,
+                            Id = new Guid("92e75459-35ac-4078-aff7-18e728953718"),
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3106),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6579),
                             Description = "Dummy5 Description",
                             Name = "Dummy5 Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 6,
+                            Id = new Guid("048234ff-e015-4087-92d5-3ae2a00f7a08"),
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 6, 25, 20, 21, 31, 926, DateTimeKind.Local).AddTicks(3108),
+                            CreatedDate = new DateTime(2023, 6, 27, 9, 58, 2, 95, DateTimeKind.Local).AddTicks(6580),
                             Description = "Dummy6 Description",
                             Name = "Dummy6 Name",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)

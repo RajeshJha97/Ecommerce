@@ -10,7 +10,7 @@ namespace Ecommerce.Models.Models.DTO.Product
     public class ProductUpdateDTO
     {
         [Required]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

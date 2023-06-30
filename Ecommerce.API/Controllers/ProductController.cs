@@ -52,10 +52,10 @@ namespace Ecommerce.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [HttpGet("{id:int}", Name = "GetProduct")]
-        public async Task<ActionResult<APIResponse>> GetProduct(int id)
+        [HttpGet("{id:Guid}", Name = "GetProduct")]
+        public async Task<ActionResult<APIResponse>> GetProduct(Guid? id)
         {
-            if (id == 0)
+            if (id ==null || id==Guid.Empty)
             {
                     _resp.StatusCode = HttpStatusCode.BadRequest;
                     _resp.ErrorMessage = "No data is available";
@@ -106,11 +106,11 @@ namespace Ecommerce.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [HttpDelete("{id:int}", Name = "DeleteProduct")]
-        public async Task<ActionResult<APIResponse>> DeleteProduct(int id)
+        [HttpDelete("{id:Guid}", Name = "DeleteProduct")]
+        public async Task<ActionResult<APIResponse>> DeleteProduct(Guid id)
         {
             var datas =await _db.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
-            if (id == 0 || datas == null)
+            if (id ==Guid.Empty || datas == null)
             {
                 _resp.StatusCode=HttpStatusCode.BadRequest;
                 _resp.ErrorMessage = $"No record found with id :{id}";
@@ -128,8 +128,8 @@ namespace Ecommerce.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [HttpPut("{id:int}",Name = "UpdateProduct")]
-        public async Task<ActionResult<APIResponse>> UpdateProduct([FromBody] ProductUpdateDTO updateDTO,int id)
+        [HttpPut("{id:Guid}",Name = "UpdateProduct")]
+        public async Task<ActionResult<APIResponse>> UpdateProduct([FromBody] ProductUpdateDTO updateDTO,Guid id)
         {
             if (id != updateDTO.Id)
             {
